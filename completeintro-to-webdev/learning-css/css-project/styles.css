@@ -1,0 +1,106 @@
+h1 {
+    font-family: 'Pinyon Script', cursive;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    
+}
+
+p {
+    padding-left: 7px;
+    padding-right: 5px;
+}
+
+img {
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.main-flex-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+
+.flex-container {
+    height: stretch;
+    display: flex;
+    width: 100%;
+}
+
+
+.box {
+    height: inherit;
+    border-top: 1.5px solid black;
+    border-bottom: 1.5px solid black;
+}
+
+.box1 {
+    width: 25%;
+    border-left: 1px solid black;
+    border-right:1px solid black;
+}
+
+.box2 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.box3 {
+    width: 25%;
+    border-left: 1px solid black;
+    border-right:1px solid black;
+}
+
+.box4 {
+    height: inherit;
+    width: 25%;
+    border-left: 1px solid black;
+    border-right:1px solid black;
+    border-bottom: 1.5px solid black;   
+}
+
+.box5 {
+    height: inherit;
+    width: 75%;
+    border-right:1px solid black;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1.5px solid black;    
+}
+
+.headline {
+    font-family: 'Sarabun', sans-serif;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.headline1 {
+    background-color: antiquewhite;
+}
+
+.headline2 {
+    background-color: skyblue;
+}
+
+.headline3 {
+    background-color: aquamarine;
+}
+
+.headline4 {
+    background-color: cornflowerblue;
+}
+
+.headline5 {
+    background-color: slateblue;
+}
+
+.title {
+    font-weight: normal;
+    text-align: center;
+    font-style: italic;
+}
+
