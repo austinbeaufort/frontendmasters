@@ -1,0 +1,130 @@
+.grid-container {
+    display: grid;
+    width: 100%;
+    justify-content: center;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
+}
+
+.grid-item {
+    height: 60px;
+    width: 60px;
+    border: .5px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.display {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    width: 240px;
+    text-align: right;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    font-family: monospace;
+    font-size: 30px;
+    color: white;
+    background-color: black;
+    cursor: default;
+}
+
+.clear {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: 120px;
+    border-left: none;
+}
+
+.operator {
+    border-right: none;
+    color: white;
+    background-color: peru;
+}
+
+.operator:hover {
+    background-color: #ffb960;
+}
+
+.equals {
+    border-bottom: none;
+}
+
+.numbtn:hover {
+    background-color: #f7f7f7;
+}
+
+.seven {
+    border-left: none;
+}
+
+.four {
+    border-left: none;
+}
+
+.one {
+    border-left: none;
+}
+
+.zero {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    width: 180px;
+    border-left: none;
+    border-bottom: none;
+}
+
+
+@media (min-width: 1000px) {
+    .grid-item {
+        height: 90px;
+        width: 90px;
+        font-size: 35px;
+        border: 1px solid black;
+    }
+
+    .display {
+        width: 360px;
+        font-size: 40px;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+    }
+    
+    .clear {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        width: 180px;
+        border-left: none;
+    }
+
+    .operator {
+        border-right: none;
+    }
+
+    .equals {
+        border-bottom: none;
+    }
+    
+    .seven {
+        border-left: none;
+    }
+
+    .four {
+        border-left: none;
+    }
+
+    .one {
+        border-left: none;
+    }
+
+    .zero {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        width: 270px;
+        border-bottom: none;
+        border-left: none;
+    }
+
+}

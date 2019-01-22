@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learning JavaScript Part 2</title>
+</head>
+<body>
+
+<!-- DOM -->
+
+<!-- <style>
+    .red-square {
+        width: 100px;
+        height: 100px;
+        background-color: crimson;
+    }
+</style>
+
+<div class="red-square"></div>
+
+<script>
+    let redSquare = document.querySelector('.red-square');
+    redSquare.style.backgroundColor = 'limegreen';
+</script> -->
+
+
+<!-- <ul>
+    <li class="js-target">Unchanged</li>
+    <li class="js-target">Unchanged</li>
+    <li>Won't Change</li>
+    <li class="js-target">Unchanged</li>
+    <li>Won't Change</li>
+    <li class="js-target">Unchanged</li>
+</ul>
+
+<script>
+    let elementsToChange = document.querySelectorAll('.js-target');
+    for(let i = 0; i < elementsToChange.length; i++) {
+        let currentElement = elementsToChange[i];
+        currentElement.innerText = 'modified by javascript!';
+    }
+</script> -->
+
+<!-- 
+<button class="event-button">click me</button>
+
+<script>
+    let button = document.querySelector('.event-button');
+
+    button.addEventListener('click', function() {
+        alert('hi there');
+    });
+</script> -->
+
+
+<!-- <input placeholder='type into me!' class='input-to-copy'>
+<p class="p-to-copy-to">nothing has happened yet</p>
+
+<script>
+    let input = document.querySelector('.input-to-copy');
+    let paragraph = document.querySelector('p-to-copy-to');
+
+    input.addEventListener('keyup', function() {
+        paragraph.innerText = input.value;
+    });
+</script> -->
+
+<!-- 
+<style>
+    .color-box {
+        background-color: limegreen;
+        width: 100px;
+        height: 100px;
+    }
+</style>
+
+<div class="color-box"></div>
+<input class="color-input" placeholder="Type a color here!">
+
+<script>
+    let input = document.querySelector('.color-input');
+    let box = document.querySelector('.color-box');
+
+    input.addEventListener('change', function() {
+        box.style.backgroundColor = input.value;
+    });
+</script> -->
+
+
+<!-- <div class="button-container">
+
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+
+</div>
+
+<script>
+    document.querySelector('.button-container').addEventListener('click', function(event) {
+        alert(`You clicked on button ${event.target.innerText}`);
+    });
+</script> -->
+
+
+
+    <script src="part2.js"></script>
+</body>
+</html>
