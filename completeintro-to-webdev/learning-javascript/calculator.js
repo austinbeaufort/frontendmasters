@@ -1,62 +1,89 @@
-// selecting the container
-let container = document.querySelector('.grid-container');
+// HTML AND CSS WAS DONE ON MY OWN. USED GRID.
 
-// selecting display
-let display = document.querySelector('.display');
-
+// SOLVED JAVASCRIPT WITH HELP FROM THE TUTORIAL, WAS TOO DIFICULT ON MY OWN.
+// WILL HAVE TO RETURN AT SOME POINT TO TRY AGAIN.
 
 
-// selecting special operators
-let clear = document.querySelector('.clear');  
-let backspace = document.querySelector('.backspace');
-let equals = document.querySelector('.equals');
+let runningTotal = 0;
+let buffer = '0';
+let previousOperator = null;
+const display = document.querySelector('.display')
 
-// assigning all grid numbers to a single variable..
-let number = document.querySelectorAll('.number');
+document.querySelector('.grid-container').addEventListener('click', function(event) {
+    buttonClick(event.target.innerText);
+})
 
-// numbers object
-let numbers = {
-    zerobtn: document.querySelector('.zero'),
-    onebtn: document.querySelector('.one'),
-    twobtn: document.querySelector('.two'),
-    threebtn: document.querySelector('.three'),
-    fourbtn: document.querySelector('.four'),
-    fivebtn: document.querySelector('.five'),
-    sixbtn: document.querySelector('.six'),
-    sevenbtn: document.querySelector('.seven'),
-    eightbtn: document.querySelector('.eight'),
-    ninebtn: document.querySelector('.nine')
+function buttonClick(value) {
+    if (isNaN(parseInt(value))) {
+        handleSymbol(value);
+    } else {
+        handleNumber(value);
+    }
+    rerender();
 }
 
-// selecting operators
-    operators = {
-    divide: document.querySelector('.divide'),
-    multiply: document.querySelector('.multiply'),
-    subtract: document.querySelector('.subtract'),
-    add: document.querySelector('.add')
+function handleNumber(value) {
+    if (buffer === '0') {
+        buffer = value;
+    } else {
+        buffer += value;
+    }
+}
+
+function handleSymbol(value) {
+    switch(value) {
+        case 'C':
+            buffer = '0';
+            runningTotal = 0;
+            previousOperator = null;
+            break;
+        case '=':
+            if(previousOperator === null) {
+                return;
+            }
+            flushOperation(parseInt(buffer));
+            previousOperator = null;
+            buffer = "" + runningTotal;
+            runningTotal = 0;
+            break;
+        case '←':
+            if (buffer.length === 1) {
+                buffer = '0';
+            } else {
+                buffer = buffer.substring(0, buffer.length - 1);
+            }
+            break;
+        default:
+        handleMath(value);
+        break;
+    }
+}
+
+function handleMath(value) {
+    const intBuffer = parseInt(buffer);
+    if (runningTotal === 0) {
+        runningTotal = intBuffer;
+    } else {
+        flushOperation(intBuffer);
     }
 
-// operator functions
-function addition(a, b) {
-    return parseInt(a.innerText) + parseInt(b.innerText);
+    previousOperator = value;
+
+    buffer = '0';
 }
 
-function division(a, b) {
-    return parseInt(a.innerText / b.innerText);
-}
-
-function subtraction(a, b) {
-    return parseInt(a.innerText - b.innerText);
-}
-
-function multiplication(a, b) {
-    return parseInt(a.innerText * b.innerText);
-}
-
-
-// if button clicked, display the number.
-container.addEventListener('click', function(event) {
-    if(event.target.className.includes('number')) {
-        display.innerText += event.target.innerText;
+function flushOperation(intBuffer) {
+    if (previousOperator === "+") {
+        runningTotal += intBuffer;
+    } else if (previousOperator === "-") {
+        runningTotal -= intBuffer;
+    } else if (previousOperator === "x") {
+        runningTotal *= intBuffer;
+    } else {
+        runningTotal /= intBuffer;
     }
-});
+}
+
+function rerender() {
+    display.innerText = buffer;
+}

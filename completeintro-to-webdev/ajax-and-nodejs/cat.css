@@ -1,0 +1,32 @@
+body {
+    background-image: linear-gradient(lightblue, white);
+    text-align: center;
+}
+
+img {
+    width: 300px;
+}
+
+h1 {
+    color: hotpink;
+    font-size: 50px;
+    background-color: rgba(255, 151, 246, 0.4);
+}
+
+button {
+    border: none;
+    background-color: hotpink;
+    border-radius: 10px;
+    font-size: 30px;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+    color: white;
+}
+
+button:hover {
+    background-color: rgb(253, 70, 162);
+}
+
+.button {
+    background-color: rgba(255, 151, 246, 0.5);
+}
