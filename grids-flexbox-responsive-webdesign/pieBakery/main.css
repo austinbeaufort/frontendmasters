@@ -1,0 +1,138 @@
+body {
+    background-image: url('https://raw.githubusercontent.com/jen4web/fem-layout/master/day-1-flexbox/4-pie-flexbox/begin/img/clouds.png')
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    background: wheat;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+li {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.wrapper {
+    width: 90%;
+    margin: auto auto;
+}
+
+.row {
+    color: white;
+    text-align: center;
+}
+
+.row2 {
+    background: rgb(255, 248, 234);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
+.grid1 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    margin-left: 20px;
+    margin-right: 50px;
+}
+
+.grid2 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    margin-right: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.chef {
+    width: 200px;
+    margin-left: 30px;
+    border-radius: 10px;
+}
+
+.purple, a {
+    color: mediumvioletred;
+}
+
+.history {
+    margin-top: 0px;
+    font-family: 'Great Vibes', cursive;
+    padding-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 40px;
+    border-bottom: 1px solid mediumvioletred;
+}
+
+.testimonials {
+    background: darkturquoise;
+    color: white;
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    text-align: center;
+}
+
+.pieofmonth {
+    background: mediumvioletred;
+    color: white;
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    text-align: center;
+}
+
+.sidebar-primary {
+    width: 100%;
+    border: 1px solid darkturquoise;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.sidebar-secondary {
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.pie {
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: darkturquoise;
+}
