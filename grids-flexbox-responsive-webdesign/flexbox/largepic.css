@@ -1,0 +1,26 @@
+@media (min-width: 1px) {
+    .back {
+        background: url('https://raw.githubusercontent.com/jen4web/fem-layout/master/day-1-flexbox/6-responsive-images/begin/img/mom-300.jpg');
+        background-repeat: no-repeat;
+        height: 50px;
+        
+    }
+}
+
+@media (min-width: 500px) {
+    .back {
+        background: url('https://raw.githubusercontent.com/jen4web/fem-layout/master/day-1-flexbox/6-responsive-images/begin/img/mom-767.jpg');
+        background-repeat: no-repeat;
+        height: 128px;
+        
+    }
+}
+
+@media (min-width: 1000px) {
+    .back {
+        background: url('https://raw.githubusercontent.com/jen4web/fem-layout/master/day-1-flexbox/6-responsive-images/begin/img/mom-1200.jpg');
+        background-repeat: no-repeat;
+        height: 128px;
+        
+    }
+}
