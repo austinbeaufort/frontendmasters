@@ -220,18 +220,68 @@
 // console.log('Me first!');
 
 
-var dataReceived;
+// var dataReceived;
 
-function ajaxSimulate(id, callback) {
-  var database = ['Aaron', 'Barbara', 'Chris'];
-    let data = database[id];
-    setTimeout(callback, 0);
-}
+// function ajaxSimulate(id, callback) {
+//   var database = ['Aaron', 'Barbara', 'Chris'];
+//     let data = database[id];
+//     setTimeout(callback, 0);
+// }
 
-function storeData(data) {
-    dataReceived = data;
-    console.log(dataReceived);
-}
+// function storeData(data) {
+//     dataReceived = data;
+//     console.log(dataReceived);
+// }
 
-ajaxSimulate(1, storeData);
+// ajaxSimulate(1, storeData);
+
+// function display(data) {
+//   console.log(data.post);
+// }
+
+// $.get('http://twitter.com/willsen/tweet/1', display);
+
+// console.log('me first!');
+
+
+let user1 = {
+  name: 'Will',
+  score: 3,
+  increment: function() {
+    user1.score++;
+  }
+};
+
+user1.increment();
+console.log(user1.score);
+
+
+
+let user2 = {};
+
+user2.name = "Tim";
+user2.score = 6;
+user2.increment = function() {
+  user2.score++;
+};
+
+
+let user3 = Object.create(null);
+
+user3.name = "Eva";
+user3.score = 9;
+user3.increment = function() {
+  user3.score++;
+};
+
+
+function userCreator(name, score) {
+  let newUser = {};
+  newUser.name = name;
+  newUser.score = score;
+  newUser.increment = function() {
+    newUser.score++;    // CREATES A NEW USER WITH PROPERTIES AND METHODS
+  };
+  return newUser; // RETURNS THEM ALL TO BE ASSIGNED TO A VARIABLE USER.
+};
 
