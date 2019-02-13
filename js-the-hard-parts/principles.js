@@ -244,44 +244,111 @@
 // console.log('me first!');
 
 
-let user1 = {
-  name: 'Will',
-  score: 3,
-  increment: function() {
-    user1.score++;
-  }
+// let user1 = {
+//   name: 'Will',
+//   score: 3,
+//   increment: function() {
+//     user1.score++;
+//   }
+// };
+
+// user1.increment();
+// console.log(user1.score);
+
+
+
+// let user2 = {};
+
+// user2.name = "Tim";
+// user2.score = 6;
+// user2.increment = function() {
+//   user2.score++;
+// };
+
+
+// let user3 = Object.create(null);
+
+// user3.name = "Eva";
+// user3.score = 9;
+// user3.increment = function() {
+//   user3.score++;
+// };
+
+
+// function userCreator(name, score) {
+//   let newUser = {};
+//   newUser.name = name;
+//   newUser.score = score;
+//   newUser.increment = function() {
+//     newUser.score++;    // CREATES A NEW USER WITH PROPERTIES AND METHODS
+//   };
+//   return newUser; // RETURNS THEM ALL TO BE ASSIGNED TO A VARIABLE USER.
+// };
+
+
+
+// function userCreator(name, score) {
+//   let newUser = Object.create(userFunctionStore);
+//   newUser.name = name;
+//   newUser.score = score;
+//   return newUser;
+// };
+
+// let userFunctionStore = {
+//   increment: function() {this.score++;},
+//   login: function() {console.log(`You're loggedin`);}
+// };
+
+// let user1 = userCreator('Will', 3);
+// let user2 = userCreator('Tim', 5);
+// user1.increment();
+// console.log(user1);
+
+
+
+// class Person {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   greet() {
+//     console.log('hello');
+//   }
+// }
+
+// let george = new Person('george');
+// console.log(george);
+
+// class Developer extends Person {
+//   constructor(name, age) {
+//     super(name);
+//   }
+//   introduce() {
+//     console.log(`Hello World, my name is ${this.name}`);
+//   }
+// }
+
+// let frank = new Developer('frank', 22);
+// console.log(frank.introduce());
+// console.log(frank.name);
+// console.log(frank.greet());
+
+
+function User(name, score) {
+  this.name = name;
+  this.score = score;
+}
+
+User.prototype.increment = function() {
+  this.score++;
 };
+
+User.prototype.login = function() {
+  console.log('login');
+};
+
+let user1 = new User('Eva', 9);
 
 user1.increment();
+
+console.log(user1);
 console.log(user1.score);
-
-
-
-let user2 = {};
-
-user2.name = "Tim";
-user2.score = 6;
-user2.increment = function() {
-  user2.score++;
-};
-
-
-let user3 = Object.create(null);
-
-user3.name = "Eva";
-user3.score = 9;
-user3.increment = function() {
-  user3.score++;
-};
-
-
-function userCreator(name, score) {
-  let newUser = {};
-  newUser.name = name;
-  newUser.score = score;
-  newUser.increment = function() {
-    newUser.score++;    // CREATES A NEW USER WITH PROPERTIES AND METHODS
-  };
-  return newUser; // RETURNS THEM ALL TO BE ASSIGNED TO A VARIABLE USER.
-};
-
