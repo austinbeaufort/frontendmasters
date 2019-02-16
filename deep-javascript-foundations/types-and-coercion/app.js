@@ -253,3 +253,128 @@ String([undefined]) === ""
 
 // IMPLICIT COERCION
 
+// MINUS, MULTIPLY, AND DIVIDE OPERATORS ARE DESIGNED ONLY FOR MATH, STRINGS WILL BE COERCED TO NUMBERS.
+
+// let foo = '123';
+// let baz = foo - 0;
+// console.log(baz); // 'number'
+
+// baz = foo - '0';
+// console.log(baz); // 'number'
+
+// baz = foo / 1;
+// console.log(baz); // 'number'
+
+// baz = 456;
+// foo = baz + '';
+// console.log(foo); // 'string'
+
+// foo = baz - '';
+// console.log(foo); // number
+
+
+// let foo = '123';
+// if(foo) {
+//     console.log('sure');
+// }
+
+// foo = 0;
+// if(foo) {
+//     console.log('right');
+// }
+// if(foo == false) {
+//     console.log('yeah');
+// }
+
+// let baz = foo || 'foo';
+// console.log(baz);
+
+
+// let foo = '123';
+// if(foo == true) {
+//     console.log('what?'); // foo is truthy, but the '==' sign coerces true to a number value 1. and 123 does not eequal 1.
+// }
+
+// foo = []; // TRUTHY
+// if (foo) {
+//     console.log('sure'); // sure
+// }
+
+// if (foo == false) {
+//     console.log('what?'); // what?
+// }
+
+
+// NEVER COMPARE BOOLEAN VALUES WITH '=='.
+
+// console.log(null == undefined); // true
+
+// console.log('true' == true); // false
+// console.log('foo' == [ 'foo' ]); // true
+
+// let foo = '123';
+// console.log(foo.length); // 3
+
+// console.log(foo.charAt(2)); // '3'
+
+// foo = new String('123');
+// let baz = foo + '';
+// console.log(typeof baz); // string
+
+
+// DOUBLE EQUALS VS. TRIPLE EQUALS
+
+// == CHECKS VALUE
+// === CHECKS VALUE AND TYPE
+
+// == ALLOWS COERCION
+// === DISALLOWS COERCION
+
+// let foo = [];
+// let baz = '';
+
+// if (foo == baz) {
+//     console.log('doh'); // true
+// }
+
+// if(foo === baz) {
+//     console.log('phew'); // false
+// }
+
+// foo = 0;
+// if(foo == '') {
+//     console.log('argh'); // true
+// }
+
+// if (foo === '') {
+//     console.log('phew'); // false
+// } 
+
+// let foo = '3';
+// if (foo === 3 || foo === '3') {
+//     console.log('thanks, but..');
+// }
+
+// if (foo == 3) {
+//     console.log('this is nicer');
+// }
+
+// if (typeof foo === 'string') {
+//     console.log('typeof always returns a string');
+// }
+
+
+// let foo;
+// if (foo == null) {
+//     console.log('thanks');
+// }
+
+// foo = null;
+// if (foo == null) {
+//     console.log(`thank's again`);
+// }
+
+// foo = false;
+// if (foo == null) {
+//     console.log('phew');
+// }
