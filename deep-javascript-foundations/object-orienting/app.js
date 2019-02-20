@@ -50,3 +50,72 @@
 
 // A CONSTRUCTOR MAKES AN OBJECT LINKED TO IT'S OWN PROTOTYPE.
 
+// CONSTRUCTOR => A FUNCTION CALLED WITH THE 'NEW' KEYWORD IN FRONT.
+
+// [[Prototype]] => A LINKAGE FROM ONE OBJECT TO ANOTHER. CREATED
+// WHEN THE OBJECT IS INITIALLY CREATED.
+
+// [[PROTOTYPE]] => DELEGATES UP THE CHAIN.
+
+// 3 WAYS TO FIND LINKAGE.
+// 1. __PROTO__
+// 2. OBJECT.GETPROTOTYPEOF()
+// 3. OBJECT.CONSTRUCTOR.PROTOTYPE()
+
+
+
+// CLASS {}
+
+// class Foo {
+//     constructor(who) {
+//         this.me = who;
+//     }
+
+//     identify() {
+//         return 'I am ' + this.me;
+//     }
+//     static hello() { return 'Hello!';}
+// }
+
+// let a1 = new Foo('a1');
+// let a2 = new Foo('a2');
+
+// console.log(a1.identify());
+// console.log(a2.identify());
+
+// class Bar extends Foo {
+//     speak() {
+//         alert('Hello, ' + super.identify() + '.');
+//     }
+// }
+
+// let b1 = new Bar('b1');
+
+// console.log(b1.identify());
+
+// console.log(Bar.hello());
+
+// console.log(b1);
+
+
+// CANNOT EXTEND AN OBJECT WITH CLASSES
+
+// CALL 'SUPER' BEFORE USING 'THIS' KEYWORD
+
+// 'SUPER' KEYWORD IS STATICALLY BOUND.
+
+// STAY WITHIN THE LINES WHEN USING CLASS SYNTAX.
+
+
+
+// INHERITANCE
+
+// BEHAVIOR DELEGATION
+
+// DESIGN PATTERN
+
+// DELEGATION ORIENTED DESIGN
+
+// PROTOTYPE DELEGATION => A LINK FROM ONE OBJECT TO ANOTHER 
+// THAT ALLOWS THOSE OBJECTS TO SHARE CONTEXT AT CALL TIME.
+
