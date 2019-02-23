@@ -389,8 +389,20 @@ $('ul').children().andSelf() // returns all children include the initial 'ul'.
 // .end();
 
 
-$('li').removeClass('myClass');
+// $('li').removeClass('myClass');
 
-$('li').each(function(index) {
-    $(this).append(' # ' + (index+1) );
-});
+// $('li').each(function(index) {
+//     $(this).append(' # ' + (index+1) );
+// });
+
+
+// 'THIS' KEYWORD
+
+// REFFERS TO CURRENT OBJECT
+
+// STORE SELECTORS USED MORE THAN ONCE
+
+// USE LENGTH PROPERTY TO CHECK EXISTENCE
+
+// AVOID JQUERY'S CUSTOM SELECTORS WHEN POSSIBLE
+
