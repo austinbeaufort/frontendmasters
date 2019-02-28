@@ -353,21 +353,257 @@ function gensymff(unary, seed) {
     };
 }
 
-function fibonaccif(first, second) {
-    let newValue = first;
+// function fibonaccif(first, second) {
+//     let i = 0;
+//     return function() {
+//         let next;
+//         switch(i) {
+//             case 0: 
+//                 i = 1;
+//                 return first;
+//             case 1:
+//                 i = 2;
+//                 return second;
+//             default:
+//                 next = first + second;
+//                 second = next;
+//                 return next;
+//         }
+//     }
+// }
+
+function fibonaccif(a, b) {
     return function() {
-        newValue += second;
-        return newValue;
+        let next = a;
+        a = b;
+        b += next;
+        return next;
     }
 }
 
-let fib = fibonaccif(0, 1);
-console.log(fib());
-console.log(fib());
-console.log(fib());
-console.log(fib());
-console.log(fib());
-console.log(fib());
+function counter(number) {
+    return {
+        up() {
+            number++;
+            return number;
+        },
+        down() {
+            number--;
+            return number;
+        }
+    }
+}
+
+function revocable(operation) {
+    return {
+        invoke(a, b) {
+            return operation(a, b);
+        },
+        revoke() {
+            operation = undefined;
+        }
+    }
+}
+
+function m(value, string) {
+    return {
+        value: value,
+        source: string
+    }
+}
+
+// function addm(object1, object2) {
+//     return m( object1.value + object2.value, `(${object1.value} + ${object2.value})`);
+// }
+
+
+
+function liftm(operation, string) {
+    return function(a, b) {
+        return m(operation(a.value || a, b.value || b), `(${a.value || a} ${string} ${b.value || b})`);
+    }
+}
+
+// function exp(list) {
+//     if (typeof list === 'number') {
+//         return list;
+//     }
+//     let operation = list[0];
+//     return operation(list[1], list[2]);
+// }
+
+function exp(value) {
+    return (Array.isArray(value))
+        ? value[0](exp(value[1]), exp(value[2])) : value;
+}
+
+
+
+function addg(first) {
+    function more(next) {
+        if(next === undefined) {
+            return first;
+        }
+        first += next;
+        return more;
+    }
+    if (first !== undefined) {
+        return more;
+    }
+}
+
+function liftg(binary) {
+    return function (first) {
+        if (first === undefined) {
+            return first;
+        }
+        return function more(next) {
+            if(next === undefined) {
+                return first;
+            }
+            first = binary(first, next);
+            return more;
+        }
+    }
+}
+
+function arrayg(first) {
+    let newArray = [];
+    function more(next) {
+        if(next === undefined) {
+            return newArray;
+        }
+        newArray.push(next);
+        return more;
+    }
+    return more(first);
+}
+
+function continuize(unary) {
+    return function(callback, arg) {
+        return callback(unary(arg));
+    }
+}
+
+
+function vector() {
+    let array = [];
+
+    return {
+        get: function get(i) {
+            return array[i];
+        },
+        store: function store(i, v) {
+            array[i] = v;
+        },
+        append: function append(v) {
+            array.push(v);
+        }
+    };
+}
+
+
+// myvector = vector();
+// console.log(myvector.append(7));
+// console.log(myvector.store(1, 8));
+// console.log(myvector.get(0));
+// console.log(myvector.get(1));
+
+
+function pubsub() {
+    let subscribers = [];
+    return {
+        subscribe(subscriber) {
+            subscribers.push(subscriber);
+        },
+        publish(publication) {
+            for (let i = 0; i < subscribers.length; i++) {
+                subscribers[i](publication);
+            }
+        }
+    }
+}
+
+console.log(my_pubsub = pubsub());
+console.log(my_pubsub.subscribe(log));
+console.log(my_pubsub.publish('It works!'));
+
+
+
+
+// sqrtc = continuize(Math.sqrt);
+// console.log(sqrtc(alert, 81));
+
+// console.log(arrayg());
+// console.log(arrayg(3)());
+// console.log(arrayg(3)(4)(5)());
+
+
+// console.log(liftg(multiply)());
+// console.log(liftg(multiply)(3)());
+// console.log(liftg(multiply)(3)(0)(4)());
+// console.log(liftg(multiply)(1)(2)(4)(8)());
+
+// console.log(addg());
+// console.log(addg(2)());
+// console.log(addg(2)(7)());
+// console.log(addg(3)(0)(4)());
+// console.log(addg(1)(2)(4)(8)());
+
+
+
+
+
+// let nae = [
+//     Math.sqrt,
+//     [
+//         add,
+//         [square, 3],
+//         [square, 4]
+//     ]
+// ];
+
+
+
+// console.log(exp(nae));
+// let sae = [multiply, 5, 11];
+// console.log(exp(sae));
+// console.log(exp(42));
+
+
+// let addm = liftm(add, "+");
+// console.log(JSON.stringify((addm(3, m(4)))));
+// console.log(JSON.stringify(liftm(multiply, '*')(3, m(4))));
+
+
+// console.log(JSON.stringify(m(1)));
+// console.log(JSON.stringify(m(Math.PI, "pi")));
+
+
+// let rev = revocable(add);
+// add_rev = rev.invoke;
+// console.log(add_rev(3, 4));
+// rev.revoke();
+// console.log(add_rev(5, 7));
+
+// let object = counter(10);
+// let up = object.up;
+// let down = object.down;
+
+// console.log(up());
+// console.log(down());
+// console.log(down());
+// console.log(up());
+
+// let fib = fibonaccif(0, 1);
+// console.log(fib());
+// console.log(fib());
+// console.log(fib());
+// console.log(fib());
+// console.log(fib());
+// console.log(fib());
+
+
 
 
 // let geng = gensymf('G');
@@ -443,5 +679,3 @@ console.log(fib());
 // console.log(index());
 // console.log(index());
 // console.log(index());
-
-
