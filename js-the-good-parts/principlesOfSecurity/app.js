@@ -183,3 +183,21 @@ best OO patterns are also capability patterns
 // INCONVENIENCE IS NOT SECURITY.
 // IDENTITY IS NOT SECURITY.
 // INTRUSION DETECTION IS NOT SECURITY.
+
+
+// RQ TYPES
+// Requestor
+// callbacks
+// factory
+// cancel
+
+// TESTING
+// assertEquals(message, expected, actual);
+
+// QuickCheck
+
+
+// JSCHECK Testing Library
+// Case generation
+// Testing over turns
+
