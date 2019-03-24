@@ -61,3 +61,48 @@
 // 6. Can access filesystem
 // 7. Async
 // 7. No browser based API's
+
+
+
+// GLOBALS
+// Node gives helpful globals, but just like the browser, 
+// you SHOULD NOT create your own.
+
+// GLOBALS
+
+// 1. process - has information about the environment the,
+// program is running in.
+
+// 2. require - function to find and use modules in a,
+// current module.
+
+// 3. __dirname - the current directory path
+
+// 4. module - information about current module,
+// methods or making module consumable.
+
+// 5. global - like window, it's the 'global' object.
+// Almost NEVER use this.
+
+// ... many more
+
+
+
+// WHAT ARE MODULES??
+// CommonsJs
+// packaged, "safe" code.
+// Node Wraps the file in an IIFE for us.
+// let module1 = (function(exports, require, module, __filename, __dirname) {
+
+// })
+
+// NodeJS uses commonJs for it's module system.
+
+// Other module systems out there:
+// ESM (ecmascript modules)
+// AMD (pretty much out of date)
+// others.. don't use the others
+
+
+
+// CREATING MODULES
