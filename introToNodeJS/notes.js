@@ -105,4 +105,32 @@
 
 
 
+
 // CREATING MODULES
+
+// ALL YOUR NODEJS CODE ARE MODULES
+// REGULAR CODE, JUST EXPORT IT
+
+// AS THE AUTHOR, YOU DECIDE HOW AND WHAT TO EXPOSE,
+// FROM YOUR MODULES, TO OTHER MODULES.
+
+// YOU DO THIS WITH THE "MODULE" GLOBAL OBJECT PROVIDED,
+// TO YOU BY THE NODEJS RUNTIME.
+
+// USE MODULE.EXPORTS
+
+// IF EXPORTING MORE THAN ONE THING, ALWAYS EXPORT,
+// THE THINGS AS AN OBJECT.
+
+// CAN ONLY USE ONE MODULE.EXPORTS STATEMENT PER FILE.
+
+
+
+// USING MODULES
+
+// "require" global
+
+// "require" takes a relative path to the module you want to use, and,
+// sychronously loads it by returning whatever the target module exported.
+
+
